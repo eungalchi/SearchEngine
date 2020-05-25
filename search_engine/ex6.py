@@ -7,7 +7,7 @@ from find_columns import *
 from input_processing import *
 
 
-Input = input() #sys.argv[1] #input()
+Input = sys.argv[1] #input()
 
 Input_list = list(Input)
 # Input 전처리 -> 부터, 까지, 이, 을, 에, 가지, 개 등등 stopwords 필터링
