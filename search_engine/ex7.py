@@ -6,8 +6,7 @@ import re
 import pandas as pd
 import sys
 from find_columns import *
-
-# find_code, find_count, find_date, find_fin, find_min_max, find_stock_code
+from input_processing import *
 
 
 Input = sys.argv[1] #input()
@@ -15,12 +14,7 @@ Input = sys.argv[1] #input()
 Input_list = list(Input)
 # Input 전처리 -> 부터, 까지, 이, 을, 에, 가지, 개 등등 stopwords 필터링
 
-stop = ['이', '을', '에', '가가', '개', '의', '던', '았', '었', '은', '를', '는', '인', '데']
-
-new_input = ''
-for inp in Input_list:
-    if inp not in stop:
-        new_input += inp
+new_input = stop_word(Input_list)
 
 token = word_tokenize(new_input) # 입력 문장의 토큰화
 #print(token)

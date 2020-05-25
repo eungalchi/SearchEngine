@@ -65,9 +65,13 @@ dateReg = re.compile('^([12]\\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01]))')
 
 
 def find_fin(word):
-    if word in category.keys():
-        #print(word) # 재무항목 fin 칼럼명 필요
-        return category.get(word)
+    for key in category.keys():
+        if word.startswith(key):
+            return category.get(key)
+
+    # if word in category.keys():
+    #     #print(word) # 재무항목 fin 칼럼명 필요
+    #     return category.get(word)
 
 
 def find_min_max(word):
