@@ -54,7 +54,7 @@ Adj = {'최대' : 'desc', '큰' : 'desc', '많' : 'desc', '컸' : 'desc', '높' 
 
 stocks = ['종목', '종목코드', '코드', '주식', '티커']
 
-stock = pd.read_excel(r'search_engine/USA_stocks.xlsx')
+stock = pd.read_excel(r'USA_stocks.xlsx')
 
 stock_name = stock['종목명'].tolist()
 ticker = stock['종목코드'].tolist()
@@ -107,6 +107,14 @@ def find_stock_code(word):
     if word in stocks:
         #print("SYMBOL")
         return 'SYMBOL'
+
+
+def find_dur(word):
+    if word.startswith("일주일") or word.startswith("1주"):
+        return 'WEEK'
+    elif word.startswith("한달") or word.startswith("1달"):
+        return 'MONTH'
+
 
 
 if __name__ == '__main__':

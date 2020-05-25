@@ -46,13 +46,13 @@ for word in token: # 혹시 모르게 토큰이 잡힐 수 있으므로 sql문�
     if min_max is None:
         min_max = find_min_max(word)
     if (start_date is None) or (end_date is None):
-        if date_order == 0:
+        if date_order == 0: # 첫번째 날짜를 찾음
             start_date = find_date(word, date_order)
-            if start_date is not None:
+            if start_date is not None: # 첫번째 날짜를 찾았을 때 순서를 다음으로 넘김
                 date_order += 1
-        else:
-            end_date = find_date(word, date_order)
-    if count is None or count == 1:
+        else: # 첫번째 날짜를 이미 찾은 상태
+            end_date = find_date(word, date_order) # 두번째 날짜 변수 저장
+    if count is None or count == 1: # '가장'이라는 단어가 있을 수도, 없을 수도, 따라서 '가장'을 찾아서 1로 저장해도 계속 찾아야함
         if count == 1:
             count_b = 1
         count = find_count(word)

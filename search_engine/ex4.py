@@ -11,7 +11,7 @@ import sys
 from find_columns import *
 
 
-Input = sys.argv[1] #input()
+Input = input() #sys.argv[1] #input()
 
 Input_list = list(Input)
 # Input 전처리 -> 부터, 까지, 이, 을, 에, 가지, 개 등등 stopwords 필터링
@@ -36,6 +36,7 @@ stock_code = None # 종목코드 -> 종목이라는 의미를 나타내는 것
 code = None # 티커를 나타내는 것
 count = None # 기본 다섯가지 보여줌
 count_b = None
+dur = None
 
 for word in token:
     #print("<" + word + ">")
@@ -51,6 +52,8 @@ for word in token:
         count = find_count(word)
     if stock_code is None:
         stock_code = find_stock_code(word)
+    if dur is None:
+        dur = find_dur(word)
 
 if count is None: # '가장'만 있을 때는 한 종목만, 가짓수가 있을 때는 그 개수만큼, 없을 때는 기본 5가지
     if count_b == 1:
@@ -58,6 +61,6 @@ if count is None: # '가장'만 있을 때는 한 종목만, 가짓수가 있을
     else :
         count = 5
 
-sql = 'select {} ans from PLAN_DB where ASOFDATE BETWEEN DATE_ADD(NOW(),INTERVAL -21 WEEK ) AND NOW() group by {} order by sum({}) {} limit {};'.format(stock_code, stock_code, fin, min_max, count)
+sql = 'select {} ans from PLAN_DB where ASOFDATE BETWEEN DATE_ADD(NOW(),INTERVAL -21 {} ) AND NOW() group by {} order by sum({}) {} limit {};'.format(stock_code, dur, stock_code, fin, min_max, count)
 print(sql)
 sys.stdout.flush()
