@@ -31,7 +31,7 @@ min_max = None
 stock_code = None # 종목코드 -> 종목이라는 의미를 나타내는 것
 code = None # 티커를 나타내는 것
 count = None # 기본 다섯가지 보여줌
-count_b = None
+count_b = None # '가장' 변수
 
 for word in token: # 혹시 모르게 토큰이 잡힐 수 있으므로 sql문에 맞는 if문만 넣기!
     #print("<" + word + ">")

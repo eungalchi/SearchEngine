@@ -1,2 +1,46 @@
-#
-# # -*- coding: utf-8 -*-
+## '최근 일주일동안' '록히드마틴'의 '시가''(총액)'을 알려주세요. (완료)
+# 최근 한달동안
+# -*- coding: utf-8 -*-
+
+from nltk.tokenize import word_tokenize
+from find_columns import *
+from input_processing import *
+
+
+Input = input() #sys.argv[1] #input()
+
+Input_list = list(Input)
+# Input 전처리 -> 부터, 까지, 이, 을, 에, 가지, 개 등등 stopwords 필터링
+
+new_input = stop_word(Input_list)
+
+token = word_tokenize(new_input) # 입력 문장의 토큰화
+
+
+date_order = 0 # 날짜 순서 변수
+fin = None
+code = None # 티커를 나타내는 것
+dur = None
+
+
+for word in token: # 혹시 모르게 토큰이 잡힐 수 있으므로 sql문에 맞는 if문만 넣기!
+    #print("<" + word + ">")
+    if code is None: # code를 찾지 못했으면
+        code = find_code(word)
+    if fin is None:
+        fin = find_fin(word)
+    if dur is None:
+        dur = find_dur(word)
+
+
+# 키워드 뽑기
+
+# 키워드 부족한 부분 파악
+
+# 다시 질문
+if dur == 'WEEK':
+    sql = "select sum({}) ans from PLAN_DB where ASOFDATE BETWEEN DATE_ADD(NOW(),INTERVAL -22 {} ) AND NOW() and SYMBOL='{}';".format(fin, dur, code)
+else:
+    sql = "select sum({}) ans from PLAN_DB where ASOFDATE BETWEEN DATE_ADD(NOW(),INTERVAL -5 {} ) AND NOW() and SYMBOL='{}';".format(fin, dur, code)
+print(sql)
+sys.stdout.flush()

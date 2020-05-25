@@ -57,6 +57,9 @@ if count is None: # '가장'만 있을 때는 한 종목만, 가짓수가 있을
     else :
         count = 5
 
-sql = 'select {} ans from PLAN_DB where ASOFDATE BETWEEN DATE_ADD(NOW(),INTERVAL -21 {} ) AND NOW() group by {} order by sum({}) {} limit {};'.format(stock_code, dur, stock_code, fin, min_max, count)
+if dur == 'WEEK':
+    sql = 'select {} ans from PLAN_DB where ASOFDATE BETWEEN DATE_ADD(NOW(),INTERVAL -22 {} ) AND NOW() group by {} order by sum({}) {} limit {};'.format(stock_code, dur, stock_code, fin, min_max, count)
+else:
+    sql = 'select {} ans from PLAN_DB where ASOFDATE BETWEEN DATE_ADD(NOW(),INTERVAL -5 {} ) AND NOW() group by {} order by sum({}) {} limit {};'.format(stock_code, dur, stock_code, fin, min_max, count)
 print(sql)
 sys.stdout.flush()
