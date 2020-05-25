@@ -7,7 +7,7 @@ import numpy as np
 import sys
 
 
-def vectorize_sequences(sequences, dimension=136999):
+def vectorize_sequences(sequences, dimension=10000):
     results = np.zeros((len(sequences), dimension)) # 크기가 들어온 리스트 (단어개수, 전체단어개수)이고, 모든 원소가 0인 행렬을 생성
     for i, sequence in enumerate(sequences):
         results[i, sequence] = 1.
