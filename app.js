@@ -4,12 +4,25 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 //var PythonShell = require('python-shell');
+var cors = require('cors');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var pythonRouter = require('./routes/python');
 
 var app = express();
+
+var whitelist = ['http://localhost:3000', 'http://172.16.71.18:3000', 'http://13.209.250.188:3000']
+var corsOptions = {
+  origin : function(origin, callback) {
+    var isWhitelisted = whitelist.indexOf(origin) !== -1;
+    callback(null, isWhitelisted);
+  },
+
+  credentials:true
+
+}
+
 
 /*
 var option = {
@@ -30,6 +43,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 //app.use(PythonShell(option))
+
+app.use(cors(corsOptions));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
