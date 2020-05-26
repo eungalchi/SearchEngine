@@ -1,10 +1,7 @@
-# (최근/오늘/어제) 'ㅇㅇ'의 '시가'를 알려주세요.
+# [최근/오늘/어제] 'ㅇㅇ'의 '시가'를 알려주세요.
 # -*- coding: utf-8 -*-
 
 from nltk.tokenize import word_tokenize
-import re
-import pandas as pd
-import sys
 from find_columns import *
 from input_processing import *
 
@@ -43,7 +40,7 @@ for word in token: # 혹시 모르게 토큰이 잡힐 수 있으므로 sql문�
 # 키워드 부족한 부분 파악
 
 # 다시 질문
-# NOW() 변경해야 함!
-sql = "select {} ans from PLAN_DB where ASOFDATE BETWEEN DATE_ADD('2019-12-31'',INTERVAL {} DAY) AND NOW() and SYMBOL='{}' limit 1;".format(fin, day, code)
+# CURDATE() 변경해야 함!
+sql = "select {} ans from PLAN_DB where ASOFDATE = ('2019-12-31' - INTERVAL {} DAY) and SYMBOL='{}';".format(fin, day, code)
 print(sql)
 sys.stdout.flush()

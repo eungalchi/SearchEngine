@@ -2,9 +2,6 @@
 # -*- coding: utf-8 -*-
 
 from nltk.tokenize import word_tokenize
-import re
-import pandas as pd
-import sys
 from find_columns import *
 from input_processing import *
 
@@ -42,7 +39,7 @@ for word in token: # 혹시 모르게 토큰이 잡힐 수 있으므로 sql문�
 # 키워드 부족한 부분 파악
 
 # 다시 질문
-# NOW() 변경해야 함!
+# CURDATE() 변경해야 함!
 sql = "select {} ans from PLAN_DB where ASOFDATE = '{}' and SYMBOL = '{}';".format(fin, start_date, code)
 print(sql)
 sys.stdout.flush()

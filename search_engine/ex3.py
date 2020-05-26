@@ -1,4 +1,4 @@
-# 'ㅇㅇ'의 '시가'를 알려주세요. (완료)
+# 'ㅇㅇ'의 '시가'를 알려주세요. (완료, 사실상 ex7과 겹침!!!!)
 # -*- coding: utf-8 -*-
 
 from nltk.tokenize import word_tokenize

@@ -59,8 +59,8 @@ stock = pd.read_excel(r'USA_stocks.xlsx') # search_engine/
 stock_name = stock['종목명'].tolist()
 ticker = stock['종목코드'].tolist()
 
-
-countReg = re.compile('[0-9]+(가지)?$')
+#'^[0-9]+(가지)?$'    ^가 중요!!!
+countReg = re.compile('^[0-9]+(가지)?$')
 dateReg = re.compile('^([12]\\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01]))')
 
 
@@ -124,7 +124,7 @@ def find_day(word):
     if word.startswith("오늘") or word.startswith("최"):
         return '0'
     elif word.startswith("어제"):
-        return '-1'
+        return '1'
 
 
 if __name__ == '__main__':
