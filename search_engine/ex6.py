@@ -38,9 +38,7 @@ for word in token: # 혹시 모르게 토큰이 잡힐 수 있으므로 sql문�
 # 키워드 부족한 부분 파악
 
 # 다시 질문
-if dur == 'WEEK':
-    sql = "select sum({}) ans from PLAN_DB where ASOFDATE BETWEEN DATE_ADD(NOW(),INTERVAL -22 {} ) AND NOW() and SYMBOL='{}';".format(fin, dur, code)
-else:
-    sql = "select sum({}) ans from PLAN_DB where ASOFDATE BETWEEN DATE_ADD(NOW(),INTERVAL -5 {} ) AND NOW() and SYMBOL='{}';".format(fin, dur, code)
+# NOW() 변경해야 함!!
+sql = "select sum({}) ans from PLAN_DB where ASOFDATE BETWEEN DATE_ADD('2019-12-31', INTERVAL -1 {} ) AND NOW() and SYMBOL='{}';".format(fin, dur, code)
 print(sql)
 sys.stdout.flush()

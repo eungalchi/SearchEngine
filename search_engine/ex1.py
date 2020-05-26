@@ -67,7 +67,7 @@ if count is None: # '가장'만 있을 때는 한 종목만, 가짓수가 있을
 # 키워드 부족한 부분 파악
 
 # 다시 질문
-
+# 나중에 DB 정리되면 now() 날짜로 변경한 것들 확인!
 sql = "select distinct({}) ans from PLAN_DB where ASOFDATE > '{}' and ASOFDATE < '{}' order by {} {} limit {};".format(stock_code, start_date, end_date, fin, min_max, count)
 print(sql)
 sys.stdout.flush()

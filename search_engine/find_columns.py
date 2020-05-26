@@ -54,7 +54,7 @@ Adj = {'최대' : 'desc', '큰' : 'desc', '많' : 'desc', '컸' : 'desc', '높' 
 
 stocks = ['종목', '종목코드', '코드', '주식', '티커']
 
-stock = pd.read_excel(r'search_engine/USA_stocks.xlsx')
+stock = pd.read_excel(r'USA_stocks.xlsx') # search_engine/
 
 stock_name = stock['종목명'].tolist()
 ticker = stock['종목코드'].tolist()
@@ -119,6 +119,12 @@ def find_dur(word):
     elif word.startswith("한달") or word.startswith("1달"):
         return 'MONTH'
 
+
+def find_day(word):
+    if word.startswith("오늘") or word.startswith("최"):
+        return '0'
+    elif word.startswith("어제"):
+        return '-1'
 
 
 if __name__ == '__main__':

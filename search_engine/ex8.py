@@ -1,4 +1,4 @@
-# (최근/오늘/어제) 'ㅇㅇ'의 '시가'를 알려주세요.
+# (날짜) 'ㅇㅇ'의 '시가'를 알려주세요.
 # -*- coding: utf-8 -*-
 
 from nltk.tokenize import word_tokenize
@@ -17,7 +17,7 @@ Input_list = list(Input)
 new_input = stop_word(Input_list)
 
 token = word_tokenize(new_input) # 입력 문장의 토큰화
-#print(token)
+# print(token)
 
 
 date_order = 0 # 날짜 순서 변수
@@ -25,7 +25,6 @@ start_date = None
 fin = None
 stock_code = None # 종목코드 -> 종목이라는 의미를 나타내는 것
 code = None # 티커를 나타내는 것
-day = None # 1일짜리 변수
 
 for word in token: # 혹시 모르게 토큰이 잡힐 수 있으므로 sql문에 맞는 if문만 넣기!
     #print("<" + word + ">")
@@ -33,8 +32,8 @@ for word in token: # 혹시 모르게 토큰이 잡힐 수 있으므로 sql문�
         code = find_code(word)
     if fin is None:
         fin = find_fin(word)
-    if day is None:
-        day = find_day(word)
+    if start_date is None:
+        start_date = find_date(word, date_order)
 
 
 
@@ -44,6 +43,6 @@ for word in token: # 혹시 모르게 토큰이 잡힐 수 있으므로 sql문�
 
 # 다시 질문
 # NOW() 변경해야 함!
-sql = "select {} ans from PLAN_DB where ASOFDATE BETWEEN DATE_ADD('2019-12-31'',INTERVAL {} DAY) AND NOW() and SYMBOL='{}' limit 1;".format(fin, day, code)
+sql = "select {} ans from PLAN_DB where ASOFDATE = '{}' and SYMBOL = '{}';".format(fin, start_date, code)
 print(sql)
 sys.stdout.flush()
