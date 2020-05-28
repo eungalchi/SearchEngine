@@ -1,4 +1,4 @@
-# (날짜에) 가장 '수익률'이 '큰' '3'가지 '종목'을 보여주세요 (완료)
+# (날짜에) 가장 '수익률'이 '큰' '3'가지 '종목'을 보여주세요 (완료)xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 # -*- coding: utf-8 -*-
 
 from nltk.tokenize import word_tokenize
@@ -6,7 +6,7 @@ from find_columns import *
 from input_processing import *
 
 
-Input = sys.argv[1] #input()
+Input = sys.argv[1]
 
 Input_list = list(Input)
 # Input 전처리 -> 부터, 까지, 이, 을, 에, 가지, 개 등등 stopwords 필터링
@@ -25,6 +25,8 @@ stock_code = None # 종목코드 -> 종목이라는 의미를 나타내는 것
 code = None # 티커를 나타내는 것
 count = None # 기본 다섯가지 보여줌
 count_b = None
+
+#print(list(filter(find_fin, token)))
 
 for word in token:
     #print("<" + word + ">")

@@ -1,4 +1,4 @@
-# [최근/오늘/어제] 'ㅇㅇ'의 '시가'를 알려주세요.
+# [최근/오늘/어제] 'ㅇㅇ'의 '시가'를 알려주세요. xxxxxxxxxxxxxxx
 # -*- coding: utf-8 -*-
 
 from nltk.tokenize import word_tokenize

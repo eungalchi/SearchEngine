@@ -1,4 +1,4 @@
-# (날짜) 'ㅇㅇ'의 '시가'를 알려주세요.
+# (날짜) 'ㅇㅇ'의 '시가'를 알려주세요. xxxxxxxxxxxxxxxxxx
 # -*- coding: utf-8 -*-
 
 from nltk.tokenize import word_tokenize

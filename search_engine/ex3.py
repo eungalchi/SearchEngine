@@ -1,4 +1,4 @@
-# 'ㅇㅇ'의 '시가'를 알려주세요. (완료, 사실상 ex7과 겹침!!!!)
+# (최근에/오늘/어제/날짜) 'ㅇㅇ'의 '시가'를 알려주세요.
 # -*- coding: utf-8 -*-
 
 from nltk.tokenize import word_tokenize
@@ -22,20 +22,29 @@ token = word_tokenize(new_input) # 입력 문장의 토큰화
 
 date_order = 0 # 날짜 순서 변수
 start_date = None
-end_date = None
 fin = None
-min_max = None
-stock_code = None # 종목코드 -> 종목이라는 의미를 나타내는 것
 code = None # 티커를 나타내는 것
-count = None # 기본 다섯가지 보여줌
+day = None
 
 for word in token:
     if code is None:  # code를 찾지 못했으면
         code = find_code(word)
     if fin is None:
         fin = find_fin(word)
+    if day is None:
+        day = find_day(word)
+    if start_date is None:
+        start_date = find_date(word, date_order)
 
 
-sql = "select {} ans from PLAN_DB where SYMBOL='{}' order by ASOFDATE desc limit 1;".format(fin, code)
+if start_date is None: # 날짜가 없으면
+    if day is None: # 일자도 없으면
+        day = '0' # 기본이 당일
+    sql = "select {} ans from PLAN_DB where ASOFDATE = ('2019-12-31' - INTERVAL {} DAY) and SYMBOL='{}';".format(fin, day, code)
+else:
+    sql = "select {} ans from PLAN_DB where ASOFDATE = '{}' and SYMBOL = '{}';".format(fin, start_date, code)
 print(sql)
 sys.stdout.flush()
+
+
+# sql = "select {} ans from PLAN_DB where SYMBOL='{}' order by ASOFDATE desc limit 1;".format(fin, code)
