@@ -22,6 +22,12 @@ connection.connect;
 
 router.post('/py', function(req, res){
 
+  var sql = "insert into QTDB.SearchEngine (question) values('" + req.body.text + "');";
+
+  connection.query(sql, function(error, result, fields){
+
+  })
+
     var process1 = spawn('python', ["search_engine/main.py", req.body.text]);
     console.log(req.body.text)
   
