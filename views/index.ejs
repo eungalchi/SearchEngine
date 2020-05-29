@@ -37,8 +37,8 @@
               <div class="col-12 col-sm-10 col-lg-8">
                   <div class="nl-content text-center">
                       <h2>Quantec</h2>
-                      <form action="#" method="post">
-                          <input type="text" id="sch" placeholder="입력하시오."> 
+                      <form onsubmit="return false">
+                          <input onkeypress="enterkey();" type="text" id="sch" placeholder="입력하시오."> 
                           <button type="button" class="enterBtn">검색</button>
                       </form>
                     </div>
@@ -53,7 +53,19 @@
  
 </body>
 <script>
-  $(document).on("click", ".enterBtn",function(){
+
+
+  function enterkey() {
+    if(window.event.keyCode == 13){
+      search();
+    }
+  }
+
+  $(document).on("click", ".enterBtn", function click(){
+    search();
+  });
+
+  function search(){
 
     var text = $("#sch").val();
 
@@ -89,8 +101,9 @@
                 
 
   });
+  }
 
-  });
+
 
 
 
