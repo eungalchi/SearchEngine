@@ -3,13 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="ed931e0a-e5ad-42ab-8288-81e3361b417f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Word_Index.json" beforeDir="false" afterPath="$PROJECT_DIR$/Word_Index.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ex2.py" beforeDir="false" afterPath="$PROJECT_DIR$/ex2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ex3.py" beforeDir="false" afterPath="$PROJECT_DIR$/ex3.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ex7.py" beforeDir="false" afterPath="$PROJECT_DIR$/ex7.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ex8.py" beforeDir="false" afterPath="$PROJECT_DIR$/ex8.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ex9.py" beforeDir="false" afterPath="$PROJECT_DIR$/ex9.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/show_example.h5" beforeDir="false" afterPath="$PROJECT_DIR$/show_example.h5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/USA_stocks.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/USA_stocks.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/find_columns.py" beforeDir="false" afterPath="$PROJECT_DIR$/find_columns.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +33,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
-  <component name="RunManager" selected="Python.ex9">
+  <component name="RunManager" selected="Python.ex3">
     <configuration name="ex1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="search_engine" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -81,6 +76,27 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="ex3" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="search_engine" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ex3.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="ex4" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="search_engine" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -94,27 +110,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ex4.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="ex8" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="search_engine" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ex8.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -146,11 +141,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.ex3" />
         <item itemvalue="Python.ex9" />
         <item itemvalue="Python.ex4" />
         <item itemvalue="Python.ex2" />
         <item itemvalue="Python.ex1" />
-        <item itemvalue="Python.ex8" />
       </list>
     </recent_temporary>
   </component>
@@ -168,21 +163,21 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1899" height="277" key="GridCell.Tab.0.bottom" timestamp="1590562715036">
+    <state width="1899" height="277" key="GridCell.Tab.0.bottom" timestamp="1590995563448">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="277" key="GridCell.Tab.0.bottom/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1590562715036" />
-    <state width="1899" height="277" key="GridCell.Tab.0.center" timestamp="1590562715036">
+    <state width="1899" height="277" key="GridCell.Tab.0.bottom/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1590995563448" />
+    <state width="1899" height="277" key="GridCell.Tab.0.center" timestamp="1590995563448">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="277" key="GridCell.Tab.0.center/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1590562715036" />
-    <state width="1899" height="277" key="GridCell.Tab.0.left" timestamp="1590562715036">
+    <state width="1899" height="277" key="GridCell.Tab.0.center/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1590995563448" />
+    <state width="1899" height="277" key="GridCell.Tab.0.left" timestamp="1590995563448">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="277" key="GridCell.Tab.0.left/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1590562715036" />
-    <state width="1899" height="277" key="GridCell.Tab.0.right" timestamp="1590562715036">
+    <state width="1899" height="277" key="GridCell.Tab.0.left/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1590995563448" />
+    <state width="1899" height="277" key="GridCell.Tab.0.right" timestamp="1590995563448">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="277" key="GridCell.Tab.0.right/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1590562715036" />
+    <state width="1899" height="277" key="GridCell.Tab.0.right/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1590995563448" />
   </component>
 </project>

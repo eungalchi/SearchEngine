@@ -90,14 +90,17 @@ def find_count(word):
 
 
 def find_code(word):
-    if (word in ticker) or (word in stock_name): # 어느 종목인지 확인
-        if word in stock_name:
-            code_v = stock[stock['종목명'] == word].values
+    if word in ticker:
+        return word
+
+    for name in stock_name:
+        if word[:3] == name[:3]:
+            print(word[:3])
+            print(name)
+            code_v = stock[stock['종목명'] == name].values
             #print("종목 : " + code[0][1])
             return code_v[0][1]
-        else:
-            #print("종목 : " + word)
-            return word
+
 
 
 def find_date(word, date_order):
