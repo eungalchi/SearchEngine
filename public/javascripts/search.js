@@ -27,14 +27,14 @@ function enterkey() {
                     console.log((data[i].ans))
                   }
                   if(data == ''){
-                    alert("키워드를 중심으로 다시 검색해 주십시오.")
+                    alert("DB에 데이터가 없습니다,,~_~")
                   }
                   else alert(alertmessage)
                   //alert(data[0].code)
                 },
                 error: function (request, status, error) {
                 console.log('error!');
-                alert("예제를 더 만들겠습니다,,,, 데이터 감사합니다 :)")
+                alert("인식할 수 없는 키워드가 있습니다. 데이터 감사합니다 :)")
                 //console.log(request.responseText);
                 //alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
                 },
