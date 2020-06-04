@@ -12,15 +12,22 @@ from input_processing import *
 # find_code, find_count, find_date, find_fin, find_min_max, find_stock_code
 
 
-Input = sys.argv[1] #input()
+Input = sys.argv[1]
 
-Input_list = list(Input)
+token = in_preprocess(Input)
+'''
+#Input_list = list(Input)
 # Input 전처리 -> 부터, 까지, 이, 을, 에, 가지, 개 등등 stopwords 필터링
 
-new_input = stop_word(Input_list)
+okt = Okt()
+Input_list = okt.morphs(Input, stem=True)
+print(Input_list)
 
-token = word_tokenize(new_input) # 입력 문장의 토큰화
-#print(token)
+token = stop_word(Input_list)
+#token = word_tokenize(new_input) # 입력 문장의 토큰화
+print(token)
+'''
+
 
 
 date_order = 0 # 날짜 순서 변수
@@ -30,8 +37,8 @@ fin = None
 min_max = None
 stock_code = None # 종목코드 -> 종목이라는 의미를 나타내는 것
 code = None # 티커를 나타내는 것
-count = None # 기본 다섯가지 보여줌
-count_b = None # '가장' 변수
+count = 5 # 기본 다섯가지 보여줌
+#count_b = None # '가장' 변수
 
 for word in token: # 혹시 모르게 토큰이 잡힐 수 있으므로 sql문에 맞는 if문만 넣기!
     #print("<" + word + ">")
@@ -48,19 +55,29 @@ for word in token: # 혹시 모르게 토큰이 잡힐 수 있으므로 sql문�
                 date_order += 1
         else: # 첫번째 날짜를 이미 찾은 상태
             end_date = find_date(word, date_order) # 두번째 날짜 변수 저장
-    if count is None or count == 1: # '가장'이라는 단어가 있을 수도, 없을 수도, 따라서 '가장'을 찾아서 1로 저장해도 계속 찾아야함
-        if count == 1:
-            count_b = 1
-        count = find_count(word)
     if stock_code is None:
         stock_code = find_stock_code(word)
+    if find_count(word) is not None:
+        count = find_count(word)
+    """
+    if count is None or count == 1: # '가장'이라는 단어가 있을 수도, 없을 수도, 따라서 '가장'을 찾아서 1로 저장해도 계속 찾아야함
+    if count == 1:
+        count_b = 1
+    count = find_count(word)
+    
+    """
 
 
+
+    """
 if count is None: # '가장'만 있을 때는 한 종목만, 가짓수가 있을 때는 그 개수만큼, 없을 때는 기본 5가지
+
     if count_b == 1:
         count = count_b
     else :
         count = 5
+    """
+
 
 # 키워드 뽑기
 

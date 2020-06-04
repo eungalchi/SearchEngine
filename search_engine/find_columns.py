@@ -1,5 +1,6 @@
 import re
 import pandas as pd
+import datetime
 import sys
 
 
@@ -50,7 +51,7 @@ category = { '시가' : 'OPEN_PRICE', # '가'에 대한 처리, 시가 = 시 (�
              }
 
 
-Adj = {'최대' : 'desc', '큰' : 'desc', '많' : 'desc', '컸' : 'desc', '높' : 'desc', '최소' : 'asc', '낮' : 'asc', '작' : 'asc', '적' : 'asc'}
+Adj = {'최대' : 'desc',  '높다' : 'desc', '많다' : 'desc', '크다' : 'desc', '최소' : 'asc', '낮다' : 'asc', '작다' : 'asc', '적다' : 'asc'}
 
 stocks = ['종목', '종목코드', '코드', '주식', '티커']
 
@@ -63,6 +64,7 @@ ticker = stock['종목코드'].tolist()
 countReg = re.compile('^[0-9]+(가지)?$')
 dateReg = re.compile('^([12]\\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01]))')
 
+d = datetime.date.today()
 
 def find_fin(word):
     for key in category.keys():
@@ -100,12 +102,20 @@ def find_code(word):
             return code_v[0][1]
 
 
-
 def find_date(word, date_order):
     if dateReg.search(word) and date_order == 0: # 시작날짜가 보통 앞에 온다.
         return dateReg.search(word).group()
     elif dateReg.match(word) and date_order == 1:
         return dateReg.match(word).group()
+
+
+def find_date2(word):
+    if word.endswith("월") or word.endswith("일"): # 년, 월, 일 나눌 수 있음!!! 없어!!!!!
+        date = re.search('[0-9]+', word).group()
+        if int(date) > 9:
+            date = '-' + date
+        else: date = '-0' + date
+        return date
 
 
 def find_stock_code(word):

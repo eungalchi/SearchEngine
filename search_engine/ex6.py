@@ -9,12 +9,7 @@ from input_processing import *
 
 Input = sys.argv[1] #input()
 
-Input_list = list(Input)
-# Input 전처리 -> 부터, 까지, 이, 을, 에, 가지, 개 등등 stopwords 필터링
-
-new_input = stop_word(Input_list)
-
-token = word_tokenize(new_input) # 입력 문장의 토큰화
+token = in_preprocess(Input)
 
 
 date_order = 0 # 날짜 순서 변수

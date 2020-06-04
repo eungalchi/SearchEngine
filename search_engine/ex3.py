@@ -11,20 +11,16 @@ from input_processing import *
 
 Input = sys.argv[1] #input()
 
-Input_list = list(Input)
-# Input 전처리 -> 부터, 까지, 이, 을, 에, 가지, 개 등등 stopwords 필터링
-
-new_input = stop_word(Input_list)
-
-token = word_tokenize(new_input) # 입력 문장의 토큰화
-#print(token)
+token = in_preprocess(Input)
 
 
+dateReg = re.compile('^([12]\\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01]))$')
 date_order = 0 # 날짜 순서 변수
 start_date = None
 fin = None
 code = None # 티커를 나타내는 것
 day = None
+date = '2020'
 
 for word in token:
     if code is None:  # code를 찾지 못했으면
@@ -35,6 +31,12 @@ for word in token:
         day = find_day(word)
     if start_date is None:
         start_date = find_date(word, date_order)
+    if not dateReg.search(date):
+        date += str(find_date2(word))
+
+
+if start_date is None and date is not '2020':
+    start_date = date
 
 
 if start_date is None: # 날짜가 없으면
