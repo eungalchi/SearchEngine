@@ -35,7 +35,7 @@ for word in token:
         date += str(find_date2(word))
 
 
-if start_date is None and date is not '2020':
+if start_date is None and dateReg.search(date):
     start_date = date
 
 
