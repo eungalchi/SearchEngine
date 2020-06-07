@@ -15,7 +15,6 @@ Input = sys.argv[1]
 
 token = in_preprocess(Input)
 #token = word_tokenize(new_input) # 입력 문장의 토큰화
-print(token)
 
 dateReg = re.compile('^([12]\\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01]))$')
 date_order = 0 # 날짜 순서 변수
