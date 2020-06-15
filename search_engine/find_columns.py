@@ -55,7 +55,7 @@ Adj = {'최대' : 'desc',  '높다' : 'desc', '많다' : 'desc', '크다' : 'des
 
 stocks = ['종목', '종목코드', '코드', '주식', '티커']
 
-stock = pd.read_excel(r'USA_stocks.xlsx') #search_engine/
+stock = pd.read_excel(r'search_engine/USA_stocks.xlsx') #
 
 stock_name = stock['종목명'].tolist()
 ticker = stock['종목코드'].tolist()
