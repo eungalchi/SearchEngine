@@ -55,7 +55,7 @@ Adj = {'최대' : 'desc',  '높다' : 'desc', '많다' : 'desc', '크다' : 'des
 
 stocks = ['종목', '종목코드', '코드', '주식', '티커']
 
-stock = pd.read_excel(r'search_engine/USA_stocks.xlsx') #
+stock = pd.read_excel(r'USA_stocks.xlsx') #search_engine/
 
 stock_name = stock['종목명'].tolist()
 ticker = stock['종목코드'].tolist()
@@ -111,6 +111,8 @@ def find_date(word, date_order):
 
 def find_date2(word):
     if word.endswith("월") or word.endswith("일"): # 년, 월, 일 나눌 수 있음!!! 없어!!!!!
+        if re.search('[0-9]+', word) is None:
+            return None
         date = re.search('[0-9]+', word).group()
         if int(date) > 9:
             date = '-' + date
