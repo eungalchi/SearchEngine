@@ -1,5 +1,5 @@
 function enterkey() {
-    if(window.event.keyCode == 13){
+    if(window.event.keyCode == 13){ //키보드에 'Enter' 버튼 눌렀을 시
       search();
     }
   }
@@ -13,7 +13,7 @@ function enterkey() {
     var text = $("#sch").val();
 
     $.ajax({
-                url:'http://3.34.174.254:3000/python/py',//3.34.174.254:3000
+                url:'http://3.34.174.254:3000/python/py',//
                 type : 'POST',
                 data : {
                   text : text

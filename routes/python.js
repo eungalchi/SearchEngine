@@ -28,13 +28,13 @@ router.post('/py', function(req, res){
 
   })
 
-    var process1 = spawn('python', ["search_engine/main.py", req.body.text]);
+    var process = spawn('python', ["search_engine/main.py", req.body.text]);
     console.log(req.body.text)
   
-    process1.stdout.on('data', function(data){
+    process.stdout.on('data', function(data){
   
-      //res.send(data.toString());
-  
+      //res.send(data.toString("utf-8"));
+      /*
       console.log(data);
       console.log(data.toString() + "번 시나리오");
       
@@ -48,7 +48,7 @@ router.post('/py', function(req, res){
       var process2 = spawn('python', [exadress + ".py", req.body.text]);
   
       process2.stdout.on('data', function(data){
-  
+        */
         console.log(data.toString("utf-8"));
         var sql = data.toString();
   
@@ -72,23 +72,27 @@ router.post('/py', function(req, res){
               console.log('The result is: ', results);
               res.json(results);
           }
-          */
+  */        
       }) 
         //res.send(data.toString("utf-8"));
+
       })
-  
+  /*
       process2.stderr.on('data', function(data){
   
         console.log("error!" + data)
     
       })
-  
-    });
-    process1.stderr.on('data', function(data){
+  */
+   // });
+    process.stderr.on('data', function(data){
   
       console.log("error!" + data)
   
     })
+
+
+    
   });
   
   module.exports = router;
