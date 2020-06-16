@@ -68,7 +68,7 @@ d = datetime.date.today()
 
 def find_fin(word):
     for key in category.keys():
-        if word.startswith(key):
+        if word.startswith(key[:len(word)]):
             return category.get(key)
 
     # if word in category.keys():
