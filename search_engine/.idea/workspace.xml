@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ed931e0a-e5ad-42ab-8288-81e3361b417f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/find_columns.py" beforeDir="false" afterPath="$PROJECT_DIR$/find_columns.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testcase.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../testcase.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +30,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Q엔진/q_eng_200515_06mod" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunManager" selected="Python.main">
@@ -163,6 +163,10 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
+    <state x="2660" y="275" key="FileChooserDialogImpl" timestamp="1592521989596">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2660" y="275" key="FileChooserDialogImpl/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1592521989596" />
     <state width="1899" height="275" key="GridCell.Tab.0.bottom" timestamp="1592213371002">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
